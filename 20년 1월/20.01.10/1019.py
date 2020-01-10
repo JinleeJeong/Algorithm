@@ -1,0 +1,5 @@
+timeStr = input().split(".")
+timeStr[0] = int(timeStr[0])
+timeStr[1] = int(timeStr[1])
+timeStr[2] = int(timeStr[2])
+print("%04d" %timeStr[0],".","%02d" %timeStr[1],"." ,"%02d" %timeStr[2], sep="")
