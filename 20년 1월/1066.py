@@ -1,4 +1,7 @@
-a = [38, 21, 53, 62, 19]
+numberArray = list(map(int, input().split(" ")))
 
-for index, value in enumerate(a, 1):
-    print(index + 1, value)
+for i in numberArray:
+    if(i % 2 == 0):
+        print("even")
+    else:
+        print("odd")
