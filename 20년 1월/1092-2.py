@@ -1,5 +1,5 @@
  
-def GCD(a, b=None):
+def GCD(a, b):
     if b == None:
         return a
     #처음을 위한 루틴
@@ -21,7 +21,7 @@ def GCD(a, b=None):
     # b는 a%b
     # a는 temp값 즉 작은 값을 가져옴
 
-def LCM(a,b=None):
+def LCM(a,b):
     if b == None:
         return a
     #처음을 위한 루틴
