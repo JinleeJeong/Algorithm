@@ -6,3 +6,5 @@ for i in range(0, n):
         resultNum = int(callNumber[i])
 
 print(resultNum)
+
+# 가장 작은 수 구하기

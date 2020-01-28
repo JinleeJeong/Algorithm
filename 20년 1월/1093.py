@@ -8,3 +8,5 @@ for i in range(1, 24):
 
 for i in range(23):
     print(resultArray[i], end=" ")
+
+# 배열에 하나씩 배치하는 로직 > 기본 24개
