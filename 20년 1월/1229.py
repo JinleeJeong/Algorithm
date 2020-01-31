@@ -1,6 +1,12 @@
 height, weight = map(float, input().split())
 
-normalWeight = (height - 100) * 0.9
+if(height >= 160):
+    normalWeight = (height - 100) * 0.9
+elif(height >= 150):
+    normalWeight = (height - 150) / 2 + 50
+else:
+    normalWeight = (height - 100)
+    
 Obesity = (weight - normalWeight) * 100 / normalWeight
 
 if(Obesity > 20):
