@@ -8,4 +8,7 @@ for i in triArray:
 
 triArray.remove(maxLine)
 
-print(triArray)
+if(maxLine < triArray[0] + triArray[1]):
+    print("yes")
+else:
+    print("no")
