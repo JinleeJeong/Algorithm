@@ -24,7 +24,8 @@ def EEA(a,b):
         # y 값은 y0 - 몫 * y1 : 나머지 구하는 식이랑 동일
         y = y0 - q * y1
         y0,y1 = y1,y
- 
-    print("{} = {}*({}) + {}*({})".format(c, a,x0,b,y0))
+        
+    # print("{} = {}*({}) + {}*({} {})".format(c, a,x0,b,y0, r))
+    print("{} {}".format(x0, y0))
  
 EEA(a,b) # 7 = 161*(-1) + 28*(6)
