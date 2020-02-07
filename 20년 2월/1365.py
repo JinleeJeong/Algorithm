@@ -9,7 +9,7 @@ bCount = 2
 bCount_2 = 1
 
 cCount = 0
-
+# 짝수는 가운데 같은게 두개 있고, 테두리를 기준으로 X줄을 만든다!
 if(n % 2 == 0):
     for x in range(0,n-2):
         if(n//2-1 <= x):
@@ -35,6 +35,7 @@ if(n % 2 == 0):
 
             c.append(x)
 
+# 홀수는 테두리를 기준으로 X줄을 만든다!
 else:
     for x in range(0,n-2):
         if(n//2-1 < x):
