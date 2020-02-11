@@ -6,7 +6,7 @@
 
 ## 목표
 
-    평일 : One commit a day 주말 : Project(Yapp & Etoos)
+    평일 : One commit a day 주말 : Project(Yapp & React)
     
 ## 폴더구조
 
