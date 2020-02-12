@@ -4,6 +4,7 @@ nList = [0 for i in range(0,n)]
 for x in range(0, n):
     nList[x] = input()
 
+# 삽입
 for i in range(0, n):
     # i == 1 
     # j == 0
