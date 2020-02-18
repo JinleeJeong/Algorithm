@@ -1,49 +1,17 @@
-# 달팽이 채우기
-# 1 2 3 4
-# 10 11 12 5
-# 9 8 7 6
-
-n, m = map(int, input().split()) # 3, 4
+n, m = map(int, input().split())
 matrix = [[0]*m for i in range(n)]
-
-x,y = 0,0
-xm, ym = 1, 1
 count = 0
 
-while any(0 in x for x in matrix):
-    if xm == 1:    
-        for i in range(0, m):
-            if matrix[x][i] == 0:
-                count += 1
-                matrix[x][i] = count
-                y = i
-                xm = -1
-
-    else:
-        for i in range(m-1, -1, -1):
-            if matrix[x][i] == 0:
-                count += 1
-                matrix[x][i] = count
-                y = i
-                xm = 1
+#0부터 3까지 0~4
+for i in range(0, n+m-1): # 0 1 2 3 n+m-1인 이유는 2행 3열을 나타내기 때문에, 나열했을 때, i값과 같아야 함!!
+    for j in range(0, m): # 0 1 2
+        for k in range(0, n): # 0 1
+            if j+k == i:
                 
-    if ym == 1:
-        for j in range(0, n):
-            if matrix[j][y] == 0:
                 count += 1
-                matrix[j][y] = count
-                x = j
-                ym = -1
+                matrix[k][j] = count
 
-    else:
-        for j in range(n-1, -1, -1):
-            if matrix[j][y] == 0:
-                count += 1
-                matrix[j][y] = count
-                x = j
-                ym = 1
-
-for i in range(0, n):
+for i in range(n-1, -1, -1):
     for j in range(0, m):
         print(matrix[i][j], end=' ')
     print()
