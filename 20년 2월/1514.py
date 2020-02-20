@@ -10,7 +10,7 @@ for i in range(3):
     nList.append(list(map(int, input().split())))
 
 
-# x가 4인 경우는 확인 후, 세로 줄 1로 채워넣기
+# x가 4인 경우는 확인 후, 세로 줄 1로 채워넣기 ★★ 4인경우 먼저!!!
 for i in range(3):
     x, y = nList[i][0], nList[i][1]
 
