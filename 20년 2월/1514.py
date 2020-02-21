@@ -15,6 +15,7 @@ for i in range(3):
     x, y = nList[i][0], nList[i][1]
 
     if x == 4:
+        
         for i in range(0, 7):
             matrix[i][y-1] = 1
 
