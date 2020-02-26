@@ -1,67 +1,63 @@
-# bfs 문제.. 너비 우선 탐색
+# bfs 문제 너비 우선 탐색
+# deque 사용! deque는 double-ended-queue 자료구조 
+# append extend pop
 
-import copy
 import sys
+import collections
 
-n, m = map(int, sys.stdin.readline().split())
+# 기존보다 속도 증가
+input = sys.stdin.readline
+M, N = map(int, input().split())
+
+zeroCount = 0
 nList = []
-cnt = 0
-listFlag = False
-for i in range(0, m):
-    nList.append(list(map(int, sys.stdin.readline().split())))
+# 토마토 리스트
+tomato = collections.deque()
 
-while any(0 in x for x in nList):
-# for x in range(0, 2):
-    supList = copy.deepcopy(nList)
-    for i in range(0, m): # 4
-        for j in range(0, n): # 6
-            if supList[i][j] == 1:
+for i in range(N):
+    nList.append(list(map(int, input().split())))
+    
+ 
+for i in range(N):
+    for j in range(M):
+        if nList[i][j] == 1 :
+            tomato.append((i, j))
+        elif nList[i][j] == 0:
+            zeroCount += 1
+        else:
+            continue
 
-                try: 
-                    if supList[i-1][j] == 0 and i-1 > -1 :
-                        # print("true 1", i-1, j)
-                        nList[i-1][j] = 1
-                        listFlag = True
-                except IndexError:
-                    pass
-                
-                try: 
-                    if supList[i][j-1] == 0 and j-1 > -1:
-                        # print("true 2", i, j-1)
-                        nList[i][j-1] = 1
-                        listFlag = True
-                except IndexError:
-                    pass
+# 다 익은 상태 경우 days
+days = 1
 
-                try: 
-                    if supList[i+1][j] == 0 and i+1 < m :
-                        # print("true 3" , i+1, j)
-                        nList[i+1][j] = 1
-                        listFlag = True
-                except IndexError:
-                    pass
-
-                try: 
-                    if supList[i][j+1] == 0 and j+1 < n:
-                        # print("true 4", i, j+1)
-                        nList[i][j+1] = 1
-                        listFlag = True
-                except IndexError:
-                    pass
-                
-            else:
-                continue
-
-    if nList == supList:
-        listFlag = False
-        break
-    else:
-        listFlag = True
-
-    cnt += 1
-    supList = nList
-
-if listFlag:
-    print(cnt)
-else:
+while tomato:
+ 
+    # 상하좌우
+    a = [0, 0, 1, -1]
+    b = [1, -1, 0, 0]
+    
+    popList = tomato.popleft()
+ 
+    x = popList[0]
+    y = popList[1]
+ 
+    for i in range(0, 4) :
+ 
+        nx = x + a[i]
+        ny = y + b[i]
+ 
+        # x, y 값의 오류인 경우 & 좌표 -1
+        if (nx >= N or nx < 0 or ny >= M or ny < 0) or (nList[nx][ny] != 0):
+            continue
+        
+        # 익음!
+        nList[nx][ny] = nList[x][y] + 1
+        tomato.append((nx, ny))
+        
+        days = max(nList[nx][ny], days)
+        zeroCount -= 1
+ 
+if zeroCount == 0 :
+    print(days-1)
+else :
     print(-1)
