@@ -17,7 +17,6 @@ tomato = collections.deque()
 for i in range(N):
     nList.append(list(map(int, input().split())))
     
- 
 for i in range(N):
     for j in range(M):
         if nList[i][j] == 1 :
@@ -33,7 +32,7 @@ days = 1
 while tomato:
  
     # 상하좌우
-    a = [0, 0, 1, -1]
+    a = [0, 0, -1, 1]
     b = [1, -1, 0, 0]
     
     popList = tomato.popleft()
