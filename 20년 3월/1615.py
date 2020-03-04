@@ -1,3 +1,7 @@
+# 넥슨 입사 시험 
+# 셀프 넘버
+# 제너레이터 되는 것을 배열에 채워 안채워진 값의 합 더하기
+
 a, b = map(int ,input().split())
 
 nList = [0] * 5000
@@ -16,11 +20,8 @@ if a == 1 and b == 1:
 else:
     for i in range(1, b):
         
-        print('gener : ',gener(i))
-        if gener(i):
-            
+        if gener(i):    
             nList[gener(i)] = 1
-
 
     for i in range(a, b):
         if nList[i] == 0:
