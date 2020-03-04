@@ -26,7 +26,6 @@ while searchList:
     visited.append(idx)
     print('visited : ', visited)
     for i in nList[idx]:
-        print(i)
         if i not in visited and i not in searchList: # 방문하지 않았으며, searchList에 중복으로 저장이 되면 안된다. 즉, 방문한적이 있으면 넣지 않는다.
             searchList.append(i)                        
  
