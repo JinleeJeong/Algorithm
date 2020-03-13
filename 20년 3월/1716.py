@@ -13,4 +13,4 @@ for i in range(n, 10):
             nSum += 31
 
 
-print(nSum ,mSum)
+print(nSum+mSum)
