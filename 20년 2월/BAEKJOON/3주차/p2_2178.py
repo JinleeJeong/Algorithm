@@ -14,8 +14,9 @@ searchList.append((0, 0))
 
 for i in range(N):
     nList.append(list(input()))
+    print(nList)
     nList[i].pop()
-
+    print(nList)
     for j in range(M):
         nList[i][j] = int(nList[i][j])
 
