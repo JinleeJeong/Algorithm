@@ -1,7 +1,8 @@
 # 그리디 알고리즘 사용하는 문제
 
 # 1. sorting
-# 2. 
+# 2. cnt+1 < a[i]
+# 3. 아니면 cnt += a[i]
 import sys
 
 n = int(sys.stdin.readline())
