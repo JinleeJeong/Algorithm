@@ -8,6 +8,8 @@ def pivot(a, b, cnt):
     c = a+b
     if cnt == n:
         print(b)
+    elif n == 1:
+        print(1)
     else:
         cnt += 1
         a = b
