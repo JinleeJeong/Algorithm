@@ -1,22 +1,22 @@
-N = int(input())
+n, k = map(int, input().split())
 
-a, b = 1, 1
-cnt = 3
-def pivot(a, b):
+multi = n
+kCnt = 1
+def nk(k, kCnt):
+    # print(k, kCnt)
+    global multi
+    if kCnt != k:
+        multi *= n
+        kCnt += 1
+        # print(multi, kCnt)
+        nk(k, kCnt)
     
-    if N == 1 or N == 2:
-        print(1)
-    elif N == 3:
-        print(2)
-    else:
-        global cnt
-        c = a+b
-        a = b
-        b = c
-        if cnt == N:
-            print(c % 10009)
-        else:
-            cnt += 1
-            pivot(a, b)
-
-pivot(a, b)
+if k == 0 or n == 1:
+    print(1)
+elif n == -1 and k % 2 == 0:
+    print(1)
+elif n == -1 and k % 2 != 0:
+    print(-1)
+else:
+    nk(k, kCnt)
+    print(multi)
