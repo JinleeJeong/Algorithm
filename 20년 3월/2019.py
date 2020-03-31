@@ -14,7 +14,7 @@ else:
     h = math.sqrt(-check) / (2 * a)
     if h < 0:
         print('%.2f+%.2fi' %(-b / (2*a), -h))
-        print('%.2f+%.2fi' %(-b / (2*a), h))
+        print('%.2f%.2fi' %(-b / (2*a), h))
     else:
         print('%.2f+%.2fi' %(-b / (2*a), h))
         print('%.2f%.2fi' %(-b / (2*a), -h))
