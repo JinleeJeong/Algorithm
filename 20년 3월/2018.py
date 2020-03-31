@@ -1,5 +1,4 @@
 a, b = map(int, input().split())
-
 start = '1'
 
 def ant_numbers(number, i):
