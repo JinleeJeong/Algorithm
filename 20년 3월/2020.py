@@ -17,6 +17,6 @@ for i in range(2, len(strNum), 2):
             sumNum += int(strNum[i]) * strDict.get(strNum[i+1])
     else:
         sumNum += int(strNum[i]) * strDict.get(strNum[i+1])
-    print(sumNum)
+    # print(sumNum)
 
 print(sumNum)
