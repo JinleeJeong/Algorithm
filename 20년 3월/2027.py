@@ -9,6 +9,6 @@ for i in range(n-2):
 
     sumNum = first+second
     cornWay.append(sumNum)
-    print(cornWay)
+    # print(cornWay)
 
 print(cornWay[len(cornWay)-1])
