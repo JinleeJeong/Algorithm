@@ -6,12 +6,20 @@ mList = copy.copy(nList)
 mList = sorted(mList)
 cnt = 0
 
-for i in range(n):
-    for j in range(n):
-        if mList[i] == nList[j]:
-            nList[j] = cnt
-            cnt += 1
-            break
+def binary_search(arr, value):
+    low = 0
+    high = len(arr)-1
+    while (low <= high):
+        mid = (low+high)//2
+        
+        if arr[mid] > value:
+            high = mid - 1
+        elif arr[mid] < value:
+            low = mid + 1
+        else:
+            return mid
+        
+    return -1
 
 for i in nList:
-    print(i, end=" ")
+    print(binary_search(mList, i), end=" ")
