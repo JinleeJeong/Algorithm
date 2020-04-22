@@ -1,9 +1,6 @@
 n = int(input())
-nList = []
+nList = list(map(int, input().split()))
 a = [0] * 100000
-
-for i in range(0, n):
-    nList.append(input())
 
 for i in range(0, len(nList)):
     
